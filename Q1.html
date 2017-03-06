@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Basic JS page</title>
+	<script type="text/javascript">
+		function helloWorld(){
+			sometext = "Hello, World";
+			newNode = document.createElement("p");
+			textNode = document.createTextNode(sometext);
+			newNode.appendChild(textNode);
+			divNode = document.getElementById("test");
+			divNode.appendChild(newNode);
+		}
+		
+	</script>
+</head>
+<body onLoad="helloWorld()">
+<div id="test"></div>
+
+</body>
+</html>
