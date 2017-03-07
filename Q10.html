@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Question 10</title>
+<script type="text/javascript">
+
+	function Calculate(form){
+		var nullFields = 0;
+		var calculateVar = 0;
+		var V = form.V.value;
+		var I = form.I.value;
+		var R = form.R.value;
+		if(V == "" || isNaN(parseInt(V))){
+			nullFields++;
+		}
+		if(I == "" || isNaN(parseInt(I))){
+			nullFields++;
+			calculateVar += 1;
+		}
+		if(R == "" || isNaN(parseInt(R))){
+			nullFields++;
+			calculateVar += 2;
+		}
+		if(nullFields == 1){
+			if(calculateVar == 0){
+				calc = I * R;
+				form.V.value = calc.toString();
+			}
+			else if(calculateVar == 1){
+				calc = V / R;
+				form.I.value = calc.toString();
+			}
+			else{
+				calc = V / I;
+				form.R.value = calc.toString();
+			}
+		}
+		else{
+			alert("Fill out exactly 2 fields with integers");
+		}
+		return false;
+	}
+</script>
+</head>
+<body>
+	<form action="#" onsubmit="return Calculate(this)">
+		Enter Voltage: <input type="text" name="Voltage" id="V" /><br />
+		Enter Current: <input type="text" name="Current" id="I" /><br />
+		Enter Resistance: <input type="text" name="Resistance" id="R"/><br />
+		<input type="submit" value="Calculate"/>
+	</form>
+<div id="main"></div>
+</body>
+</html>
