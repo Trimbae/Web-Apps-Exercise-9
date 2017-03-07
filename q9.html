@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Jumping Image</title>
+<script type="text/javascript">
+	function move(){
+		var XPos = ((Math.random() * 100) +  "%");
+		var YPos = ((Math.random() * 100) + "%");
+		document.getElementById("logo").style.right= XPos;
+		document.getElementById("logo").style.top = YPos;
+	}
+</script>
+</head>
+<body>
+<img src="redskins.png" id="logo" width="100" onMouseOver="move()" style="position:absolute;"/>
+</body>
+</html>
